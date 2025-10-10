@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let n;
+        do {
+            n = prompt("Introduce un numero entero positivo");
+            n = Number(n);
+            console.log(n);
+            
+            
+        } while (n < 0 || n === NaN);
+
+        const operaciones = ((n) => {
+            let div = "";
+            let cuadrados = 0;
+            let esCuadrado = false;
+            for (let i = 1; i < n; i++) {
+                if (n % i === 0) {
+                    div += `${i} `;
+                    cuadrados += i*i;
+                }
+                if (Math.sqrt(cuadrados))
+                    esCuadrado = true;
+                
+            }
+            alert(div);
+            alert(cuadrados);
+            alert(esCuadrado ? "La suma es un cuadrado" : "La suma no es un cuadrado");
+        });
+
+        operaciones(n);
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

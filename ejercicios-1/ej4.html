@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let a = prompt("Introduce un valor numerico");
+        let b = prompt("Introduce otro valor numerico");
+        
+        a = parseInt(a);
+        b = parseInt(b);
+
+        const operaciones = ((a,b) => {
+            if (isNaN(a) || isNaN(b)){
+                alert("Numeros no validos");
+                return;
+            }
+            alert(a+' + '+b+ " = "+(a+b)+"\n"+
+                a+' - '+b+ " = "+(a-b)+"\n"+
+                a+' * '+b+ " = "+a*b+"\n"+
+                a+' / '+b+ " = "+ (b !== 0 ? a/b : 
+                "No se puede dividir por cero")+ "\n"
+            );
+        });
+        operaciones(a,b);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
