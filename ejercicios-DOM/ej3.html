@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>0</div>
+    <button id="suma">Sumar</button><button id="resta">Restar</button>
+</body>
+<script>
+    const screen = document.getElementsByTagName("div")[0];
+    const suma = document.getElementById("suma");
+    const resta = document.getElementById("resta");
+    suma.addEventListener('click', () => {
+        Number(screen.textContent++);
+    });
+    resta.addEventListener('click', () => {
+        Number(screen.textContent--);
+    });
+</script>
+</html>

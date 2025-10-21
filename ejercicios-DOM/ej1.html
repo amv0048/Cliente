@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <a id="enlace-google" href="https://www.google.com">Ir a google</a>
+    <button id="btn-G">Mostrar URL</button>
+    <button id="btn-C">Cambiar</button>
+</body>
+<script>
+    const enlace = document.getElementById("enlace-google");
+    const btnG = document.getElementById("btn-G");
+    btnG.addEventListener('click', () => {
+        alert(`URL: ${enlace.href}\n
+        Texto: ${enlace.textContent}`);
+    });
+    const btnC = document.getElementById("btn-C");
+    btnC.addEventListener('click', () => {
+        enlace.href = "https://www.ufc.com";
+        enlace.textContent = "He cambiado";
+    });
+
+</script>
+</html>
