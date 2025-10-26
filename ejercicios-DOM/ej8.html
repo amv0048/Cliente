@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img id="first" src="medac.png" width="250px" height="250px">
+    <script>
+        const medac = document.getElementById('first');
+        medac.onmouseover = (() => {
+            medac.setAttribute("src","davante.jfif");
+        });
+        medac.onmouseout = (() => {
+            medac.src = "medac.png";
+        })
+    </script>
+</body>
+</html>

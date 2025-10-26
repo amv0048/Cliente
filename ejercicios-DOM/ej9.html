@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Parrafo 1</p>
+
+    <script>
+        const parra = document.querySelector("p");
+        parra.style.backgroundColor = "red";
+        parra.onclick = (() => {
+            parra.style.backgroundColor === "red" 
+            ? parra.style.backgroundColor = "green" 
+            : parra.style.backgroundColor = "red";
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div><img src="medac.png" alt=""></div>
+    <button id="left" value="left">izquierda</button>
+    <button id="right" value="right">derecha</button>
+
+    <style>
+        div{
+            position: absolute;
+            top: 200px;
+            left: 200px;
+        }
+    </style>
+    <script>
+        const imagen = document.querySelector("div");
+        const btnLeft = document.getElementById('left');
+        const btnRight = document.getElementById('right');
+
+        btnLeft.onclick = (() => {
+            if (parseInt(getComputedStyle(imagen).left) >= 150){
+                const pos = parseInt(getComputedStyle(imagen).left) - 5;
+                imagen.style.left = pos+"px";
+            }
+        });
+        btnRight.onclick = (() => {
+            if (parseInt(getComputedStyle(imagen).left) <= 250){
+                imagen.style.left = (parseInt(getComputedStyle(imagen).left) + 5) + "px";
+            }
+        });
+    </script>
+</body>
+</html>
