@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+
+    let edades = [2,4,6,9,10,12,50,75,89,100];
+
+    const mayorDeEdad = ((edad) => {
+        return edad > 17;
+    });
+
+    const mayorDeEdadArray = ((lista) => {
+        for (const element of lista) {
+            if (mayorDeEdad(element)) return true;
+        }
+    });
+
+    const mayorDeEdadArrayB = ((lista) => {
+        /*for (const element of lista) {
+            if (!mayorDeEdad(element)) return false;
+        }
+        return true;*/
+        return !mayorDeEdadArray(lista);
+    });
+
+    let res = edades.some(function(edad){
+        return num > 17;
+    });
+    
+    console.log(mayorDeEdad(20));
+    console.log(mayorDeEdad(12));
+    console.log(mayorDeEdadArray(edades));
+    console.log(mayorDeEdadArrayB(edades));
+    console.log(res);
+
+
+</script>
+</html>

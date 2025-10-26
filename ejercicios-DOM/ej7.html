@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1px solid black" width="300px" height = "300px">
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+</body>
+<script>
+    const cels = document.querySelectorAll("td");
+    //setInterval("alert('CArmonaaaaaaaaa')", 200);
+    //a)
+    /* cels.forEach(function(element) {
+        element.addEventListener('click', () => {
+            element.style.backgroundColor = "black";
+        })
+    }); */
+
+    //b)
+    /* cels.forEach(function(td){
+        td.addEventListener('click', () => {
+            if (td.style.backgroundColor === "black")
+                td.style.backgroundColor = "white";
+            else td.style.backgroundColor = "black";
+        })
+    }) */
+    color = ["black", "blue", "red", "yellow"];
+    cont = 0;
+    cels.forEach(function(td){
+        td.addEventListener('click', () => {
+           td.style.backgroundColor = color[cont++];
+        });
+    })
+</script>
+</html>

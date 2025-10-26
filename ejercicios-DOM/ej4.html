@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <img src="medac.png" alt="">1
+        <img src="medac.png" alt="">2
+        <img src="medac.png" alt="">3
+        <img src="medac.png" alt="">4
+        <img src="medac.png" alt="">5
+    </div>
+
+    <button id="prev"><<</button>
+    <button id="next">>></button>
+
+</body>
+    <script>
+        const img = document.getElementsByTagName("img");
+        const next = document.getElementById("next");
+        const prev = document.getElementById("prev");
+        
+        let current = 3;
+        const display = ((current) => {
+            for (let i = 0; i < img.length; i++) {
+                if (i !== current) img[i].hidden = true;
+                else img[i].hidden = false;
+            }
+        });
+
+        display(current);
+
+        next.addEventListener('click', () => {
+            if (current !== img.length-1){
+                current++;
+                display(current);
+            }
+        });
+
+        prev.addEventListener('click', () => {
+            if (current != 0){
+                current--;
+                display(current);
+            }
+        });
+    </script>
+</html>

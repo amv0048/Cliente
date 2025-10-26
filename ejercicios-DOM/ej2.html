@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <table id="t1" align="center">
+        <tr >
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+     </table>
+     <button id="btn-1"></button>
+     <button id="btn-2"></button>
+     <button id="btn-3"></button>
+     <script>
+        const tabla = document.getElementById('t1');
+        tabla.width = "300px";
+        tabla.setAttribute("height","300px");
+        tabla.border = "1px solid black";
+
+        const btn1 = document.getElementById('btn-1');
+        btn1.textContent = "Mostrar Altura y Ancho";
+        btn1.addEventListener('click', () => {
+            alert(`Altura: ${tabla.getAttribute("height")} Ancho: ${tabla.width}`);
+            tabla.setAttribute("height", prompt("Introduce un valor para la altura")+"px");
+            tabla.setAttribute("width", prompt("Introduce un valor para el ancho")+"px");
+        });
+
+        const btn2 = document.getElementById('btn-2');
+        btn2.textContent = "Mostrar borde";
+        btn2.addEventListener('click', () => {
+            alert(`Borde: ${tabla.border}`);
+            tabla.border = prompt("Introduce un valor")+"px";
+        });
+
+        const btn3 = document.getElementById('btn-3');
+        btn3.textContent = "mover tabla";
+        btn3.addEventListener('click', () => {
+            switch(true){
+                case tabla.align == "center":
+                    tabla.align = "right";
+                    break;
+                case tabla.align == "right": 
+                    tabla.align = "left"
+                    break;
+                default: tabla.align = "center";
+            }
+        });
+     </script>
+</body>
+</html>

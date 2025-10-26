@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+</body>
+<script>
+    let lista = [1000, 1500, 1700, 2000, 2300, 2500, 3000];
+    const datosArr = ((arr) => {
+        for (const element of arr) {
+            console.log(element);
+        }
+    });
+    //datosArr(lista);
+
+    const netos = ((arr) => {
+        const RETENCIONES = 15;
+        let netos = [];
+        /* for (const element of arr) {
+            netos.push(element - (element * (RETENCIONES/100)));
+        } */
+        netos = arr.map(function (valor){
+            return valor * 85/100;
+        });
+        console.log(netos);
+    });
+    //netos(lista);
+
+    const mayorMedia = ((arr) => {
+        /* let fiscalAlto = []
+        for (const element of arr) {
+            if (element > 1935) fiscalAlto.push(element);
+        }*/
+        let fiscalAlto = arr.filter(function (valor){
+           if (valor > 1935) return valor;
+        });
+        console.log(fiscalAlto); 
+    });
+    mayorMedia(lista);
+</script>
+</html>
