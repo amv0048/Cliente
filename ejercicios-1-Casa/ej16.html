@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const order = (() => {
+            const colors = ["red", "orange", "yellow", "blue", 
+                "white", "brown", "pink", "black"];
+            const userWords = []
+            for (let index = 0; index < 8; index++) {
+                const word = prompt("Introduce una palabra");
+                if (colors.includes(word)) userWords.unshift(word);
+                else userWords.push(word);
+            }
+            return userWords;
+        });
+        
+        console.log(order());
+
+    </script>
+</body>
+</html>
+
+
+

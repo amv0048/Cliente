@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let lista = [], ini, fin;
+        for (let index = 0; index < 10; index++) {
+            lista.push(Number(prompt("Introduce un numero: "+(index+1))));
+        }
+        let flag = false;
+        console.log("Array inicial: "+lista);
+        
+        do{
+            ini = Number(prompt("Introduce un numero como inicial: "));
+            fin = Number(prompt("Introduce un numero como final: "));
+            if (ini >= 0 && ini <= 9 && fin >= 0 
+            && fin <= 9 && ini < fin) flag = true;
+        } while(!flag);
+
+        let tmp = lista[ini];
+        lista.unshift(lista.pop());
+        lista[fin] = tmp;
+
+        let res = "";
+        for (let index = 0; index < lista.length; index++) {
+            res += lista[index]+ ",";
+        }
+        console.log("Array final:"+res);
+        
+
+    </script>
+</body>
+</html>
