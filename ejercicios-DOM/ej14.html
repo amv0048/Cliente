@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        
+    </style>
+    <ul>
+        <li class="title">Inicio</li>
+        <ul>
+            <li>Portada</li>
+            <li>Acerca de mi</li>
+            <li>Mis fotos</li>
+        </ul>
+
+        <li class="title">Proyectos</li>
+        <ul>
+            <li>Web Apps</li>
+            <li>Mobile Apps</li>
+            <li>Juegos</li>
+        </ul>
+        <li class="title">Portfolio</li>
+        <ul>
+            <li>Paginas webs</li>
+            <li>Software</li>
+        </ul>
+        <li class="title">Contacto</li>
+    </ul>
+</body>
+<script>
+    window.onload = () => {
+        const titles = document.getElementsByClassName("title");
+        for (let i = 0; i < titles.length; i++) {
+            titles[i].addEventListener('click', () => {
+                intercambiar(this);
+            });
+            
+        }
+
+        const intercambiar = (obj) => {
+            let estilos = window.getComputedStyle(obj);
+            let valor = estilos.getPropertyValue("display");
+        }
+    };
+</script>
+</html>

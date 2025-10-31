@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>Activar SPOILER</button>
+    <p>Mensaje sin spoiler</p>
+    <p id="spoiler" style="visibility: hidden; background-color: red;"
+    >Mensaje con spoiler</p>
+</body>
+<script>
+    window.onload = () => {
+        const btn = document.querySelector("button");
+        const parra = document.getElementById("spoiler");
+        btn.addEventListener('click', () => {
+            parra.style.visibility = "visible";
+        });
+    }
+</script>
+</html>

@@ -27,7 +27,7 @@
                 const pos = parseInt(getComputedStyle(imagen).left) - 5;
                 imagen.style.left = pos+"px";
             }
-        });
+        });  
         btnRight.onclick = (() => {
             if (parseInt(getComputedStyle(imagen).left) <= 250){
                 imagen.style.left = (parseInt(getComputedStyle(imagen).left) + 5) + "px";
