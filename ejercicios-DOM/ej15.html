@@ -7,10 +7,16 @@
 </head>
 <body>
     <style>
+        ul{
+            display: flex;
+            gap: 20px;
+        }
         .content{
             display: none;
+            display: flex;
+            flex-direction: column;
+            
         }
-        
     </style>
     <ul>
         <li class="title">Inicio</li>
@@ -33,13 +39,14 @@
         </ul>
         <li class="title">Contacto</li>
     </ul>
-</body>
-<script>
+    
+
+    <script>
     window.onload = () => {
         const titles = document.getElementsByClassName("title");
         
         Array.from(titles).forEach(title => {
-            title.addEventListener('click', () => {
+            title.addEventListener('mouseover', () => {
                 const content = title.nextElementSibling;
                 const allContent = document.getElementsByClassName("content");
                 Array.from(allContent).forEach(li => {
@@ -58,4 +65,5 @@
         : obj.style.display = "none";
     }
 </script>
+</body>
 </html>

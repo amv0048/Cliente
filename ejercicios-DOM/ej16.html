@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <meter id="meter1" min="0" max="100" value="0"></meter>
+        <button id="btnMeter1">Descargar</button>
+    </div>
+
+    <div>
+        <progress id="progress1" min="0" max="100" value="0"></progress>
+        <button id="btnProgress1">Cargar</button>
+    </div>
+
+
+<script>
+
+const load = (barra, boton) => {
+    boton.disabled = true;
+    let valor = 0;
+
+    const intervalo = setInterval(() => {
+        valor += 5;
+        if (valor > barra.max) valor = barra.max;
+        barra.value = valor;
+
+        if (valor >= barra.max) {
+            clearInterval(intervalo);
+            boton.disabled = false;
+            barra.value = 0;
+        }
+    }, 200);
+}
+
+window.onload = () => {
+    const descarga = document.getElementById("meter1");
+    const btnMeter = document.getElementById("btnMeter1");
+    btnMeter.addEventListener("click", () => load(descarga, btnMeter));
+
+    const carga = document.getElementById("progress1");
+    const btnProgress = document.getElementById("btnProgress1");
+    btnProgress.addEventListener("click", () => load(carga, btnProgress));
+};
+
+</script>
+</body>
+</html>
