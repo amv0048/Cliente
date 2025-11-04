@@ -1,0 +1,174 @@
+function ejercicio1() {
+  let numMedacin;
+
+  do {
+    numMedacin = prompt("Introduce un numero entero positivo");
+  } while (numMedacin < 0);
+
+  let valorunitario = 17 / 5;
+
+  let mivalor = numMedacin * valorunitario;
+
+  alert(numMedacin + " Medacines equivalen a " + mivalor + " Euros");
+}
+
+function ejercicio2() {
+  var suspensos = 0;
+  var aprobados = 0;
+  var notables = 0;
+  var sobresalientes = 0;
+
+  let contador = 0;
+  while (contador != 10) {
+    do {
+      nota = prompt("Introduce nota del 0-10");
+      if (nota > 10) {
+        nota = -1;
+      }
+    } while (nota < 0);
+
+    if (nota < 5) {
+      suspensos++;
+    } else if (nota <= 6 && nota >= 5) {
+      aprobados++;
+    } else if (nota <= 8 && nota >= 7) {
+      notables++;
+    } else {
+      sobresalientes++;
+    }
+    contador++;
+  }
+
+  alert(
+    "Suspensos:" +
+      suspensos +
+      " Aprobados:" +
+      aprobados +
+      " Notables:" +
+      notables +
+      " Sobresalientes:" +
+      sobresalientes
+  );
+}
+
+function ejercicio3() {
+  let numeros;
+  let arrayNumeros = [];
+  let negative = false;
+  //a y b
+  do {
+    numeros = prompt("Introduce numeros");
+    if (numeros < 0) {
+      negative = true;
+    } else {
+      arrayNumeros.push(numeros + " ");
+    }
+  } while (negative == false);
+ 
+  alert(arrayNumeros);
+  //c
+  let suma = 0;
+
+  for (let i = 0; i < arrayNumeros.length; i++) {
+    suma += parseInt(arrayNumeros[i]);
+  }
+
+  alert("La suma de todos los numeros es: " + suma);
+  //d
+  let numerito;
+  do {
+    numerito = prompt("Introduce un numero positivo");
+  } while (numerito < 0);
+
+  //falta el apartado e
+  let primeroencontrado=false
+  let posicionprimera=0;
+  while (!primeroencontrado) {
+    let i = 0;
+    if (arrayNumeros[i]==numerito) {
+        posicionprimera=i;
+        alert("la posicion del primer numero esta en"+numerito)
+        primeroencontrado=true
+    }
+
+    i++;
+  }
+  
+}
+
+function ejercicio4() {
+  const filas = 3;
+  const columnas = 3;
+
+  let matriz = [];
+
+  // Crear
+  for (let i = 0; i < filas; i++) {
+    matriz[i] = [];
+    for (let j = 0; j < columnas; j++) {
+      matriz[i][j] = parseInt(Math.trunc(Math.random() * 20));
+      if (matriz[i][j] < 10) {
+        matriz[i][j] = parseInt("0" + matriz[i][j]);
+      }
+    }
+  }
+
+  //sumar todo
+  let suma = 0;
+  for (let i = 0; i < 3; i++) {
+    for (let j = 0; j < j; j++) {
+      suma += matriz[i][j];
+    }
+  }
+
+  console.log(matriz);
+  console.log(suma);
+
+  //copiaarray
+  let copia = [];
+
+  for (let i = 0; i < filas; i++) {
+    copia[i] = [];
+    for (let j = 0; j < columnas; j++) {
+      if (matriz[i][j] > 10) {
+        copia[i][j] = 9;
+      } else {
+        copia[i][j] = matriz[i][j];
+      }
+      if (copia[i][j] < 10) {
+        copia[i][j] = "0" + copia[i][j];
+      }
+    }
+  }
+  console.log(copia);
+
+  //valor 1 y 3
+  /*
+console.log(copia);
+console.log(matriz);
+
+
+     let num
+    do {
+        num = prompt("Introduce un numero 1-3")
+    } while (num<0);
+
+    arraycopia=[];
+
+    for (let j = 0; j < columnas; j++) {
+        matriz[num][j] = arraycopia[j];
+        
+    }
+    
+    for (let j = 0; j < columnash; j++) {
+         matriz[num]= copia[num]        
+    }
+     for (let j = 0; j < columnash; j++) {
+         copia[num]= arraycopia[j]        
+    }
+   
+console.log(copia);
+console.log(matriz);
+
+*/
+}

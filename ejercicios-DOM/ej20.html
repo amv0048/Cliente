@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .primera{
+        height: 20px;
+        width: auto;
+        border: 1px solid black;
+        font-size: 20px;
+        padding: 12px;
+    }
+
+    .segunda{
+        height: 100px;
+        width: auto;
+        border: 5px solid black;
+        font-size: 40px;
+        margin: 12px;
+    }
+</style>
+<body>
+
+    <p class="primera">Hola soy la primera linea</p>
+    <button>Generar</button>
+    <button>Borrar Viejo</button>
+    <button disabled>Borrar Nuevos</button>
+    <button>Sustituir</button>
+    <script>
+        window.onload = ( () => {
+            const p = document.querySelector("p");
+            const generar = document.querySelector("button");
+            const borrarV = generar.nextElementSibling;
+            const borrarN = borrarV.nextElementSibling;
+            const sust = borrarN.nextElementSibling;
+            
+            generar.addEventListener('click', () => {
+                let newP = document.createElement("p");
+                newP.innerHTML = "Hola soy nuevo aqui";
+                newP.classList = "segunda";
+                document.body.appendChild(newP);
+                borrarN.disabled = false;
+            });
+            
+            borrarV.addEventListener('click', () => {
+               p.remove();
+               borrarV.disabled = true;
+               sust.disabled = true;
+            });
+
+            borrarN.addEventListener('click', () => {
+                document.body.querySelectorAll("p")
+                .forEach(el => {
+                    el.remove();
+                })
+            });
+
+            sust.addEventListener('click', () => {
+                let table = document.createElement("table");
+                table.style.border = "1px solid black";
+                table.style.borderCollapse = "collapse";
+                for (let i = 0; i < 2; i++) {
+                    const fila = document.createElement("tr");
+                    for (let j = 0; j < 2; j++) {
+                        const celda = document.createElement("td");
+                        celda.style.border = "1px solid black";
+                        celda.textContent = `Fila ${i + 1}, Celda ${j + 1}`;
+                        fila.appendChild(celda);
+                    }
+                    table.appendChild(fila);
+                }
+                p.replaceWith(table);
+            });
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="moneda">
+
+    </div>
+    <div>
+        <progress id="progress" min="0" max="100" value="0"></progress>
+        <button id="btnProgress">Generar Moneda</button>
+    </div>
+    <script>
+        const load = (barra, boton, moneda) => {
+        boton.disabled = true;
+        let valor = 0;
+        
+        const intervalo = setInterval(() => {
+            valor += 5;
+            if (valor > barra.max) valor = barra.max;
+            barra.value = valor;
+
+            if (valor >= barra.max) {
+                clearInterval(intervalo);
+                boton.disabled = false;
+                barra.value = 0;
+            }
+        }, 200);
+        moneda.innerHTML++;
+    }
+    
+    window.onload = () => {
+        const moneda = document.getElementById('moneda');
+        moneda.innerHTML = 0;
+        
+        const carga = document.getElementById("progress");
+        const btnProgress = document.getElementById("btnProgress");
+        btnProgress.addEventListener("click", () => load(carga, btnProgress, moneda));
+    }
+    </script>
+</body>
+</html>
