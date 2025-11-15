@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahorcado</title>
+    <script src="game.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form id="form">
+        <div class="container">
+            <div id="title">
+                <h2>El Ahorcado</h2>
+                <label for="word">Palabra: </label>
+                <input type="text" disabled id="word">
+            </div>
+            <div id="used">
+                <label for="usedWords">Letras usadas: </label>
+                <textarea disabled id="usedWords" rows="6"></textarea>
+            </div>
+            <div id="inputs">
+                <input type="button" value="Jugar!" id="submitBtn">
+                <div class="letter">
+                    <label for="letter">Letra?</label>
+                    <input type="text" id="letter">
+                </div>
+            </div>
+            <img src="img/ahor1.png" id="img-game">
+        </div>
+
+    </form>
+</body>
+</html>

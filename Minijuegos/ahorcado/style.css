@@ -1,0 +1,62 @@
+*{
+    margin: 0, auto;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#word{
+    font-family: 'Courier New', 'system';
+
+}
+
+#imagen-game{
+    width: 100%;
+    grid-area: img;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(2,150px);
+    margin: 50px;
+    height: 300px;
+    
+    grid-template-areas: 
+    "title title img"
+    "used inputs img";
+    gap: 30px;
+}
+
+#title{
+    grid-area: title;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+#title input{
+    width: 200px;
+}
+
+#used{
+    grid-area: used;
+}
+
+#inputs{
+    display: flex;
+    flex-direction: column;
+    grid-area: inputs;
+    width: 25%;
+    height: 40%;
+    gap: 12px;
+}
+
+#inputs .container input{
+    height: fit-content;
+    width: fit-content;
+}
