@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = () => {
+            const btnIni = document.querySelector("button");
+            const btnFinal = btnIni.nextElementSibling;
+            const btnElI = btnFinal.nextElementSibling;
+            const btnElF = btnElI.nextElementSibling;
+            
+            btnIni.addEventListener('click', () => {
+                let ul = document.querySelector("ul");
+                const name = prompt('Nombre de la tarea: ');
+                const newTask = document.createElement("li");
+                const input = document.createElement("input");
+                input.setAttribute("type", "checkbox");
+
+                newTask.appendChild(input);
+                newTask.append(name);
+                ul.insertBefore(newTask, ul.firstChild);
+            });
+
+            btnFinal.addEventListener('click', () => {
+                let ul = document.querySelector("ul");
+                const name = prompt('Nombre de la tarea: ');
+                const newTask = document.createElement("li");
+                const input = document.createElement("input");
+                input.setAttribute("type", "checkbox");
+
+                newTask.appendChild(input);
+                newTask.append(name);
+                ul.appendChild(newTask);
+            });
+
+            btnElI.addEventListener('click', () => {
+                let ul = document.querySelector("ul");
+                ul.removeChild(ul.firstElementChild);
+                
+            });
+
+            btnElF.addEventListener('click', () => {
+               let ul = document.querySelector("ul");
+               ul.removeChild(ul.lastElementChild); 
+            });
+
+        }
+    </script>
+</head>
+<style>
+    ul{
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    li:nth-of-type(2n){
+        background: #aab3bc;
+        color: black;
+    }
+
+    li {
+      display: flex;
+      align-items: center;
+      justify-content: left;
+      margin-bottom: 10px;
+      padding: 10px 15px;
+      cursor: pointer;
+      background-color: rgb(43, 48, 86);
+      color: white;
+    }
+
+    ul .done{
+       text-decoration: line-through; 
+    }
+
+    
+</style>
+<body>
+    <ul>
+        <li><input type="checkbox"> Bañera PVC</li>
+        <li><input type="checkbox"> Bridas</li>
+        <li><input type="checkbox"> Ketamina</li>
+        <li><input type="checkbox"> Namenda</li>
+        <li><input type="checkbox"> Análogo de GABA</li>
+        <li><input type="checkbox"> Dextrometorfano</li>
+        <li><input type="checkbox"> Condones</li>
+    </ul>
+    <button>Añadir Tarea al Inicio</button>
+    <button>Añadir Tarea al Final</button>
+    <button>Eliminar Primera Tarea</button>
+    <button>Eliminar Ultima Tarea</button>
+</body>
+</html>

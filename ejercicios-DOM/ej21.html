@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = () => {
+            const links = document.querySelectorAll("a");
+            links.forEach(a => {
+                a.addEventListener('mouseover', () => {
+                    const div = document.createElement("div");
+                    const ref = a.href;
+                    div.innerHTML = ref;
+                    document.body.appendChild(div);
+                })
+                a.addEventListener('mouseout', () => {
+                    let div = document.querySelector("div");
+                    div.remove();
+                });
+            });
+        }
+    </script>
+    <style>
+        div{
+            height: 200px;
+            width: 200px;
+            text-align: right;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <a href="http://www.google.com">Google</a>
+    <a href="http://www.Github.com">Github</a>
+    <a href="http://www.Drive.com">Drive</a>
+    <a href="http://www.Gmail.com">Gmail</a>
+</body>
+</html>
