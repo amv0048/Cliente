@@ -13,8 +13,9 @@
 }
 
 export const iniTablero = (tablero) => {
-    const players = ["W", "M", "L"];
-    for (const p of players) {
+    const items = ["M", "L", "Y"];
+    tablero[0][0].textContent = "W";
+    for (const p of items) {
         let set = false;
         do {
             const row = rand(0,8)[0];
@@ -27,7 +28,7 @@ export const iniTablero = (tablero) => {
     }
 }
 
-const rand = (min,max) => {
+export const rand = (min,max) => {
     return [Math.floor(Math.random() * max + min),
         Math.floor(Math.random() * max + min)];
 }

@@ -1,9 +1,8 @@
 import { crearTablero, iniTablero } from "./tablero.js";
-import { moveUp, moveDown, moveLeft, moveRight } from "./moves.js";
+import { moveUp, moveDown, moveLeft, moveRight, walidPos } from "./moves.js";
+import { mariaSeMueveRico, mariaPos, lauraMove, lauraPos, gameOver } from "./delegadas.js";
 
 const game = () => {
-
-    
     setControls();
     const container = document.getElementById('container');
     let tablero = crearTablero(container);
@@ -11,21 +10,32 @@ const game = () => {
 
     const up = document.getElementById('up');
     up.addEventListener('click', () => {
+        gameOver(tablero);
         moveUp(tablero);
+        mariaSeMueveRico(tablero);
+        lauraMove(tablero);
     });
     const down = document.getElementById('down');
     down.addEventListener('click', () => {
+        gameOver(tablero);
         moveDown(tablero);
+        mariaSeMueveRico(tablero);
+        lauraMove(tablero);
     });
     const left = document.getElementById('left');
     left.addEventListener('click', () => {
+        gameOver(tablero);
         moveLeft(tablero);
+        mariaSeMueveRico(tablero);
+        lauraMove(tablero);
     });
     const right = document.getElementById('right');
     right.addEventListener('click', () => {
+        gameOver(tablero);
         moveRight(tablero);
+        mariaSeMueveRico(tablero);
+        lauraMove(tablero);
     });
-
 }
 
 const setControls = () => {
