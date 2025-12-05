@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        section{
+            background-color: aqua;
+        }
+        p{
+            background-color: bisque;
+            width: 50px;
+        }
+        a{
+            background-color: black;
+            height: 20px;
+            width: 20px;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <p>
+            <a href="https://instituto.medac.es/">Confirm</a>
+        </p>
+    </section>
+    <script>
+        const sec = document.querySelector('section');
+        const p = document.querySelector('p');
+        const a = document.querySelector('a');
+
+        /* sec.addEventListener('click', () => {
+            alert("Section");
+        });
+
+        p.addEventListener('click', () => {
+            alert("Parrafo");
+        });
+
+        a.addEventListener('click', () => {
+            confirm("Deseas ir a medac.es?")
+            alert("Enlace");
+        }); */
+
+        sec.addEventListener('click', () => {
+            alert("Section");
+        });
+
+        p.addEventListener('click', () => {
+            alert("Section");
+        });
+
+        a.addEventListener('click', (e) => {
+            e.stopPropagation();
+            let go = confirm("Deseas ir a medac.es?")
+            if (go)
+                window.location.href = this.href;
+            else e.href = "";
+
+        });
+
+        /* sec.addEventListener('click', (e) => {
+            alert("Section");
+            e.stopPropagation();
+        });
+
+        p.addEventListener('click', () => {
+            alert("Parra");
+        });
+
+        a.addEventListener('click', () => {
+            confirm("Deseas ir a medac.es?")
+            alert("Enlace");
+        }); */
+
+    </script>
+</body>
+</html>
