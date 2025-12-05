@@ -15,14 +15,12 @@
         <progress id="progress1" min="0" max="100" value="0"></progress>
         <button id="btnProgress1">Cargar</button>
     </div>
-
-
 <script>
 
 const load = (barra, boton) => {
     boton.disabled = true;
     let valor = 0;
-
+    
     const intervalo = setInterval(() => {
         valor += 5;
         if (valor > barra.max) valor = barra.max;
