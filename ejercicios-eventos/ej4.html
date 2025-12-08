@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOvimiento manual</title>
+</head>
+<style>
+    div{
+        height: 100px;
+        width: 100px;
+        background-color: red;
+        border: 1px solid black;
+        position: absolute;
+    }
+</style>
+<body>
+    <h1>Usa los cursores</h1>
+    <div></div>
+<script>
+    let topPos = 100;
+    let leftPos = 100;
+    const paso = 20;
+    const d = document.querySelector('div');
+    let char = document.addEventListener('keyup', (e) => {
+        switch(e.key) {
+        case "ArrowUp":
+            topPos = Math.max(0, topPos - paso);
+            break;
+        case "ArrowDown":
+            topPos = Math.min(window.innerHeight - d.offsetHeight, topPos + paso);
+            break;
+        case "ArrowLeft":
+            leftPos = Math.max(0, leftPos - paso);
+            break;
+        case "ArrowRight":
+            leftPos = Math.min(window.innerWidth - d.offsetWidth, leftPos + paso);
+            break;
+        }
+        d.style.top = topPos + "px";
+        d.style.left = leftPos + "px";
+    });
+</script>
+</body>
+</html>

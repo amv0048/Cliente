@@ -9,10 +9,11 @@
     <form action="" method="POST">
         <label for="Apuesta">Tu apuesta: </label>
         <input type="number" id="Apuesta">
+
         <input type="button" value="Apuesta" id="bet">
         <input type="button" value="Me rindo" id="surrender">
         <br>
-        <p>#-Intentos <input type="text" id="cont"></p>
+        <p>#-Intentos <input type="text" id="cont" disabled></p>
         <p>INFO <input type="text" id="info" size="30px"></p>
 
         <input type="submit" value="Inicio" id="ini">
@@ -28,17 +29,17 @@
         const contador = document.getElementById('cont');
 
         ini.disabled = true;
-        bet.disabled = false;
+        betBtn.disabled = false;
         surrender.disabled = false;
 
         //Saco el numero
         const num = parseInt(Math.random() * 99 + 1);
+        contador.value = 0;
 
         betBtn.addEventListener('click', () => {
             console.log(num);
             
             const apuesta = parseInt(document.getElementById('Apuesta').value);
-            console.log(apuesta);
             
             switch(true){
                 case num == apuesta: 
@@ -50,8 +51,9 @@
                 case apuesta > num:
                     info.value = "EL numero introducido es mayor";
                     break;
+                    
             }
-            
+            contador.value++;
         });
 
         surrender.addEventListener('click', () => {
@@ -77,6 +79,11 @@
     };
 
     window.onload = () => {
+        const betBtn = document.getElementById('bet');
+        const surrender = document.getElementById('surrender');
+        betBtn.disabled = true;
+        surrender.disabled = true;
+        
         const ini = document.getElementById('ini');
         ini.addEventListener('click', () => {
             juego(ini);

@@ -17,7 +17,7 @@
                 const newTask = document.createElement("li");
                 const input = document.createElement("input");
                 input.setAttribute("type", "checkbox");
-
+ 
                 newTask.appendChild(input);
                 newTask.append(name);
                 ul.insertBefore(newTask, ul.firstChild);
@@ -43,7 +43,7 @@
 
             btnElF.addEventListener('click', () => {
                let ul = document.querySelector("ul");
-               ul.removeChild(ul.lastElementChild); 
+               ul.removeChild(ul.lastElementChild);
             });
 
         }
