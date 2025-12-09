@@ -29,9 +29,17 @@
         const checkbox = document.querySelectorAll('input[type=checkbox]');
         const btn = document.querySelector('input[type=button]');
 
-        btn.addEventListener('click', () => {
+        /* btn.addEventListener('click', () => {
             texto.value = checked(checkbox);
-        });
+        }); */
+
+
+        //B)
+        checkbox.forEach(el => {
+            el.addEventListener('click', () => {
+                texto.value = checked(checkbox);
+            })
+        })
     }
 
     const checked = (lista) => {
