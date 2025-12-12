@@ -3,22 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 2</title>
+    <title>Document</title>
 </head>
+    <style>
+        div{
+            height: 100px;
+            width: 100px;
+        }
+    </style>
 <body>
-    <form action="" method="POST">
-        <input type="text" name="" id="">
-        <input type="text" readonly>
-    </form>
-</body>
-<script>
-    window.onload = () => {
-        const userInput = document.querySelectorAll('input')[0];
-        const empty = document.querySelectorAll('input')[1];
+    <div></div>
+    <div></div>
+    <script>
+        const d1 = document.querySelectorAll('div')[0];
+        const d2 = document.querySelectorAll('div')[1];
 
-        userInput.addEventListener('keydown', () => {
-            empty.value = userInput.value;
-        });
-    }
-</script>
+        let coordenadas = document.addEventListener('mousemove', (e) => {
+            d1.textContent = ("X: "+e.clientX + " Y: "+e.clientY);
+        })
+
+        let btnClicked = document.addEventListener('mousedown', (e) => {
+            d2.textContent = (e.button === 0 ? "Izq" : e.button === 1? "medio": "Derecho");
+        })
+    </script>
+</body>
 </html>
