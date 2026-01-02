@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" method="post">
+        <h3>Hobbies</h3>
+        <input type="checkbox" name="senderismo">Senderismo
+        <br>
+        <input type="checkbox" name=natacion>Natación
+        <br>
+        <input type="checkbox" name="futbol">Fútbol
+        <br>
+        <input type="checkbox" name="leer">Leer
+        <br>
+
+        <textarea name="hobbies" id="">
+
+        </textarea>
+        <br>
+        <input type="button" value="Pasar a texto">
+    </form>
+    <script>
+    window.onload = () => {
+        const texto = document.querySelector('textarea');
+        const checkbox = document.querySelectorAll('input[type=checkbox]');
+        const btn = document.querySelector('input[type=button]');
+
+        const lista = document.createElement('select');
+        document.body.appendChild(lista);
+
+        checkbox.forEach(el => {
+            el.addEventListener('click', () => {
+                const newOpt = document.createElement('option');
+                newOpt.value = checked(checkbox);
+                newOpt.textContent = newOpt.value;
+                lista.appendChild(newOpt);
+            })
+        })
+    }
+
+    const checked = (lista) => {
+        let res = '';
+        for (const el of lista) {
+            if (el.checked)
+                res += el.name+" ";
+            
+        }
+        return res;
+    }
+</script>
+</body>
+</html>
