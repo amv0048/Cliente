@@ -16,7 +16,7 @@
         const userInput = document.querySelectorAll('input')[0];
         const empty = document.querySelectorAll('input')[1];
 
-        
+        empty.readOnly = true;
         userInput.addEventListener('keydown', () => {
             empty.value = userInput.value;
         });

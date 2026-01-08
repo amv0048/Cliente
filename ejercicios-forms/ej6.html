@@ -33,23 +33,32 @@
         document.body.appendChild(lista);
 
         checkbox.forEach(el => {
-            el.addEventListener('click', () => {
-                const newOpt = document.createElement('option');
-                newOpt.value = checked(checkbox);
-                newOpt.textContent = newOpt.value;
-                lista.appendChild(newOpt);
+            el.addEventListener('change', () => {
+                if (el.checked){
+                    if (!existe(el.name, lista)){
+                        const newOpt = document.createElement('option');
+                        newOpt.value = el.name;
+                        newOpt.textContent = newOpt.value;
+                        lista.appendChild(newOpt);
+                    }
+                }
+                else{
+                    for (const opt of lista) {
+                        if (opt.value === el.name){
+                            lista.removeChild(opt);
+                        }
+                    }
+                }
+                
             })
         })
-    }
 
-    const checked = (lista) => {
-        let res = '';
-        for (const el of lista) {
-            if (el.checked)
-                res += el.name+" ";
-            
+        function existe(name, lista){
+            for (const el of lista) {
+                if (el === name) return true;
+            }
+            return false;
         }
-        return res;
     }
 </script>
 </body>

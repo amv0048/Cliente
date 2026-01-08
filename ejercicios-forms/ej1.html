@@ -17,6 +17,7 @@
         const userInput = document.querySelectorAll('input')[0];
         const empty = document.querySelectorAll('input')[1];
         const btn = document.querySelectorAll('input')[2];
+        empty.readOnly = true;
 
         btn.addEventListener('click', () => {
             empty.value = userInput.value;

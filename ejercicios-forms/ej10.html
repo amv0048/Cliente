@@ -14,19 +14,19 @@
             <option value="nvidia">Nvidia</option>
         </select>
 
-        <select name="intel" id="" style="display: none;">
+        <select name="intel" id="" style="display: none;" class="sub">
             <option value="">HD 3000</option>
             <option value="">HD 4000</option>
             <option value="">RX Series 6000</option>
         </select>
 
-        <select name="amd" id="" style="display: none;">
+        <select name="amd" id="" style="display: none;" class="sub">
             <option value="">RX Series 500</option>
             <option value="">Vega Series</option>
             <option value="">RX Series 6000</option>
         </select>
 
-        <select name="nvidia" id="" style="display: none;">
+        <select name="nvidia" id="" style="display: none;" class="sub">
             <option value="">GTX Serie 1000</option>
             <option value="">GTX Serie 2000</option>
             <option value="">GTX Serie 3000</option>
@@ -36,18 +36,18 @@
     <script>
         window.onload = () => {
             const lista1 = document.querySelector('select[name = "lista1"]');
+            const subs = document.querySelectorAll('.sub');
             lista1.addEventListener('change', () => {
                 const valor = lista1.value;
-                if (!valor) return;
+                subs.forEach(s => s.style.display = "none");
+                if (!valor || valor == 'vacio') return;
                 
                 const lista = document.querySelector(`select[name="${valor}"]`);
                 if (lista) lista.style.display = 'block';
                 
-                Array.from(lista.options).forEach(element => {
-                     if (!element.selected)
-                         element.style.display = 'none';
-                 });
-           })
+                
+                
+            })
         }
     </script>
 </body>
