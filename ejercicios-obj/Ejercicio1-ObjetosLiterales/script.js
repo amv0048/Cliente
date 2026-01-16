@@ -120,19 +120,25 @@ window.onload = () => {
     let lista = document.getElementById('lista-asignaturas');
     for (const propiedad in alumno) {
         if (propiedad === 'Asignaturas'){
-            for (const key in asignaturas) {
+            for (const asignatura of asignaturas) {
                 let item = document.createElement('div');
                 item.classList = 'item';
-                for (const key2 in key) {
+                for(let key in asignatura){
                     
-                    item.innerHTML = key2+": "+asignaturas[key][key2];
-                    
-                    
+                    item.innerHTML += key+": "+asignatura[key]+"<br>";
                 }
                 lista.appendChild(item);
                 
+            }   
+        }
+        else if(propiedad == 'NotasMedias'){
+
+            for (const nota of notas) {
+                let item = document.createElement('div');
+                item.classList = 'item';
+                item.innerHTML = nota
+                lista.appendChild(item);
             }
-            
         }
     }
 }
