@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Pago del pedido</title>
+    <link rel="stylesheet" href="pago.css">
+</head>
+<body>
+
+    <header>
+        <h1>Confirmación del pedido</h1>
+    </header>
+
+    <main>
+
+        <!-- LISTADO DE PRODUCTOS -->
+        <section class="resumen">
+            <h2>Resumen de la compra</h2>
+
+            <div id="lista-productos">
+                <!-- Aquí el JS insertará los productos del carrito -->
+            </div>
+        </section>
+
+        <!-- ZONA DE PAGO -->
+        <section class="pago">
+            <h2>Datos de pago</h2>
+
+            <div class="campo">
+                <span>Importe total:</span>
+                <strong id="total">0 €</strong>
+            </div>
+
+            <button id="btnConfirmar">Confirmar pago</button>
+            <button id="btnCancelar">Cancelar</button>
+        </section>
+
+    </main>
+
+</body>
+</html>

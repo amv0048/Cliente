@@ -1,0 +1,110 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f2f6ff;
+}
+
+/* HEADER */
+header {
+    background-color: #1a237e;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* CONTENIDO PRINCIPAL */
+main {
+    display: flex;
+    padding: 30px;
+    gap: 30px;
+}
+
+/* RESUMEN DE COMPRA */
+.resumen {
+    width: 65%;
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.resumen h2 {
+    color: #1a237e;
+    margin-bottom: 20px;
+}
+
+#lista-productos {
+    border: 2px dashed #90caf9;
+    padding: 15px;
+    min-height: 200px;
+    border-radius: 8px;
+}
+
+/* ELEMENTO PRODUCTO (JS) */
+.producto {
+    display: flex;
+    justify-content: space-between;
+    background-color: #e3f2fd;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+/* ZONA DE PAGO */
+.pago {
+    width: 35%;
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    border-top: 6px solid #c62828;
+}
+
+.pago h2 {
+    color: #c62828;
+    margin-bottom: 25px;
+}
+
+.campo {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.campo span {
+    color: #333;
+}
+
+#total {
+    color: #c62828;
+    font-size: 22px;
+}
+
+/* BOTONES */
+button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-bottom: 12px;
+    transition: 0.3s;
+}
+
+#btnConfirmar {
+    background-color: #1a237e;
+    color: white;
+}
+
+#btnConfirmar:hover {
+    background-color: #0d154d;
+}
+
+#btnCancelar {
+    background-color: #c62828;
+    color: white;
+}
+
+#btnCancelar:hover {
+    background-color: #8e0000;
+}

@@ -4,8 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body{
+            height: 100vh;
+            width: 100vw;
+        }
+    </style>
 </head>
 <body>
-    
+   <div class="container">X:0,Y:0</div> 
+   <div class="container"> </div>
+
+<script>
+    const pos = document.querySelectorAll('div')[0];
+    const mouse = document.querySelectorAll('div')[1];
+
+    document.body.addEventListener('mousemove', (e) => {
+        pos.textContent = "X:" + e.clientX+ ", Y: "+e.clientY;
+    });
+
+    document.body.addEventListener('mousedown', function(event) {
+        switch(event.button) {
+            case 0:
+                mouse.textContent = 'Clic izquierdo';
+                break;
+            case 1:
+                mouse.textContent = 'Clic medio';
+                break;
+            case 2:
+                mouse.textContent = 'Clic derecho';
+                break;
+        }
+    });
+
+
+</script>
 </body>
 </html>

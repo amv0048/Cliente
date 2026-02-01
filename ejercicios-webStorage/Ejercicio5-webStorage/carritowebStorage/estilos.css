@@ -1,0 +1,110 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f1f8f4;
+}
+
+/* HEADER */
+header {
+    background-color: #2e7d32;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* CONTENIDO PRINCIPAL */
+main {
+    display: flex;
+    padding: 30px;
+    gap: 30px;
+}
+
+/* ZONA PRODUCTOS */
+.productos {
+    width: 40%;
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.productos h2 {
+    color: #2e7d32;
+}
+
+.selector {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+select {
+    flex: 1;
+    padding: 10px;
+    border: 2px solid #a5d6a7;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* BOTONES */
+#btnAñadir {
+    background-color: #43a047;
+    color: white;
+}
+
+#btnAñadir:hover {
+    background-color: #2e7d32;
+}
+
+#btnPagar {
+    width: 100%;
+    background-color: #1b5e20;
+    color: white;
+    font-size: 17px;
+}
+
+#btnPagar:hover {
+    background-color: #0d3f14;
+}
+
+/* ZONA CARRITO */
+.carrito {
+    width: 60%;
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.carrito h2 {
+    color: #1b5e20;
+    margin-bottom: 20px;
+}
+
+#lista-carrito {
+    border: 2px dashed #a5d6a7;
+    padding: 15px;
+    min-height: 200px;
+    border-radius: 8px;
+    background-color: #f9fff9;
+}
+
+/* ELEMENTOS DEL CARRITO (para JS) */
+.item-carrito {
+    background-color: #e8f5e9;
+    padding: 10px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}

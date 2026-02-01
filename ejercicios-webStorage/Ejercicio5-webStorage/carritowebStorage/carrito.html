@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Supermercado</title>
+    <link rel="stylesheet" href="estilos.css">
+    <script src="app.js"></script>
+</head>
+<body>
+
+    <header>
+        <h1>Supermercado Online</h1>
+    </header>
+
+    <main>
+        <!-- ZONA IZQUIERDA -->
+        <section class="productos">
+            <h2>Selecciona un producto</h2>
+
+            <div class="selector">
+                <select id="productos">
+                    <option>Pan</option>
+                    <option>Leche</option>
+                    <option>Huevos</option>
+                    <option>Arroz</option>
+                    <option>Pasta</option>
+                    <option>Manzanas</option>
+                    <option>Plátanos</option>
+                    <option>Tomates</option>
+                    <option>Patatas</option>
+                    <option>Pollo</option>
+                    <option>Carne picada</option>
+                    <option>Pescado</option>
+                    <option>Queso</option>
+                    <option>Yogur</option>
+                    <option>Aceite de oliva</option>
+                </select>
+
+                <button id="btnAñadir">Añadir al carrito</button>
+            </div>
+
+            <button id="btnPagar">Pagar</button>
+        </section>
+
+        <!-- ZONA DERECHA -->
+        <section class="carrito">
+            <h2>Carrito de la compra</h2>
+            <div id="lista-carrito">
+                <!-- Aquí se añadirán los productos con JS -->
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>
