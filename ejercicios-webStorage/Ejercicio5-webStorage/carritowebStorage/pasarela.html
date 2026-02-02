@@ -36,6 +36,18 @@
         </section>
 
     </main>
-
+<script>
+    let listaCompra = document.querySelector('#lista-productos')
+    let info = document.createElement('p');
+    for (let i = 0; i < localStorage.length; i++) {
+        let key = localStorage.key(i);
+        let data = localStorage.getItem(key);
+        info.textContent += data+",";
+        
+    }
+    console.log(localStorage);
+    info.id = 'lista';
+    listaCompra.appendChild(info)
+</script>
 </body>
 </html>
