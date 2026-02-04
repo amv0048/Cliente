@@ -1,0 +1,47 @@
+h1, h2{
+    font-size: 200px;
+}
+
+p{
+    font-size: 70px;
+    width: 2000px;
+    text-align: justify;
+}
+
+img{
+    width: 1000px;
+    height: 1800px;
+}
+
+.planets{
+    width:2000px;
+    height: 2000px;
+}
+
+a{
+    font-size: 150px;
+}
+
+div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.payaso{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 300px;
+}
+
+div{
+    background-color: white;
+}
+
+body{
+    background-color: gray;
+}

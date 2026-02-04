@@ -1,0 +1,29 @@
+body{
+    background-color: grey;
+    width: 100%;
+}
+
+section{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border: 2px solid white;
+    gap: 50px;
+}
+
+img{
+    width: 1000px;
+    height: 2000px;
+}
+
+h2{
+    font-size: 200px;
+}
+
+p{
+    font-size: 100px;
+}
+
